@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "./homePage/home.js";
 

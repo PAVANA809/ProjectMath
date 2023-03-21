@@ -19,13 +19,13 @@ function App(props) {
       .then((res) => res.json())
       .then((d) => setData(d));
       
-  }, []);
+  }, [link, props.cls]);
 
   useEffect(() => {
     fetch(link+"/content/" + props.cls + "/" + k+"/"+subUnit[0])
       .then((res) => res.json())
       .then((d) => setContent(d));
-  }, [subUnit]);
+  }, [subUnit, k, link, props.cls]);
   
   const setstate = (k, unit, subUnit) => {
     setK(k);
