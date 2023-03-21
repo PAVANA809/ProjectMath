@@ -1,7 +1,7 @@
 import React from "react";
-import parse from "react-html-parser";
 import "../App.css"
 import "./bodyRight1.css";
+
 
 
 export const Righttag = (props) => {
@@ -11,7 +11,7 @@ export const Righttag = (props) => {
       <p>
         {props.k} {props.unit} {props.subUnit[0]} {props.subUnit[1]}
       </p>
-      {parse(props.con)}
+      <div dangerouslySetInnerHTML={{ __html:  props.con }} />
     </div>
   );
 };
