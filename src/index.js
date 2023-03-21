@@ -13,11 +13,11 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "Class11",
+    path: "/Class11",
     element: <App cls="class11" />,
   },
   {
-    path: "Class12",
+    path: "/Class12",
     element: <App cls="class12" />,
   },
 ]);
