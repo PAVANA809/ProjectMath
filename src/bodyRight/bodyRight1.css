@@ -1,0 +1,16 @@
+
+.editbtn{
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgb(245, 0, 0);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
