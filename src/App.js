@@ -7,9 +7,9 @@ import Navbar from "./homePage/Navbar";
 
 
 function App(props) {
-  // var link1 = "http://localhost:5000";
-  var link2 = "https://projectmath.onrender.com";
-  var link = link2
+  var link1 = "http://localhost:5000";
+  // var link2 = "https://projectmath.onrender.com";
+  var link = link1
   const [unit, setUnit] = useState("");
   const [subUnit, setSubUnit] = useState("");
   const [k, setK] = useState("");
@@ -35,17 +35,10 @@ function App(props) {
   }, [link, props.cls]);
 
   useEffect(() => {
-    Swal.fire({
-      title: "Loading...",
-      allowOutsideClick: false,
-      didOpen: () => {
-        Swal.showLoading();
-      },
-    });
+    
     fetch(link+"/content/" + props.cls + "/" + k+"/"+subUnit[0])
       .then((res) => res.json())
       .then((d) => setContent(d));
-    Swal.close();
   }, [subUnit, k, link, props.cls]);
   
   const setstate = (k, unit, subUnit) => {

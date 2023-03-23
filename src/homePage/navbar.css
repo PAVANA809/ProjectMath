@@ -1,0 +1,67 @@
+.right-list a{
+    padding: 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+.right-list a:hover{
+    background-color: #ccc;
+    color: red;
+}
+
+.close-btn{
+    position: absolute;
+    top: 9px;
+    right: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+}
+.open-btn{
+    display: none;
+    position: absolute;
+    top: 9px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+}
+@media screen and (max-width: 768px) {
+    .right-list{
+        display: none;
+    }
+    .responsive_header{
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color:  #f5f5f5;
+        padding: 15px 20px;
+        transition: all 0.5s ease;
+    }
+
+    .open-btn{
+        display: block;
+        position: absolute;
+        top: 9px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        color: #000;
+    }
+    .responsive_nav{
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+}
+
+
