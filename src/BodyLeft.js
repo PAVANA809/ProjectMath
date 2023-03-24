@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import "./bodyRight/Bodyright.js";
 import "./App.js";
-// import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import "./App.css"
 
 
 export default function Lefttag(props) {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
-
+  const setSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
   const setValues = (k, unit, subUnit) => {
     props.setFun(k, unit, subUnit);
   };
@@ -17,20 +21,31 @@ export default function Lefttag(props) {
   };
  
   return (
-      <div className="body-left">
-          {
-              props.data.map((item, index) => {
-                    return (
-                        <GetUnit
-                            key={index}
-                            k={item[0]}
-                            unit={item[1]}
-                            subUnit={item[2]}
-                            selectedItem={selectedItem}
-                            setstate={[setValues, setSelectedItemOnClick]} />
-                    )
-                })
-      }
+    <div
+      className={`${
+        sidebarOpen ? "main-left-body" : "responsive-main-left-body"
+      }`}
+    >
+      <div className={`${sidebarOpen ? "show" : "hide"}`}>
+        <div className="close-btn-sidebar" onClick={setSidebar}>
+          <NavigateBeforeIcon />
+        </div>
+        {props.data.map((item, index) => {
+          return (
+            <GetUnit
+              key={index}
+              k={item[0]}
+              unit={item[1]}
+              subUnit={item[2]}
+              selectedItem={selectedItem}
+              setstate={[setValues, setSelectedItemOnClick]}
+            />
+          );
+        })}
+      </div>
+      <div className={`open-btn-sidebar ${sidebarOpen? "hide":""}`}>
+        <NavigateNextIcon onClick={setSidebar} />
+      </div>
     </div>
   );
 }
