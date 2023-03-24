@@ -7,9 +7,9 @@ import Navbar from "./homePage/Navbar";
 
 
 function App(props) {
-  var link1 = "http://localhost:5000";
-  // var link2 = "https://projectmath.onrender.com";
-  var link = link1;
+  // var link1 = "http://localhost:5000";
+  var link2 = "https://projectmath.onrender.com";
+  var link = link2;
   const [unit, setUnit] = useState("");
   const [subUnit, setSubUnit] = useState("");
   const [k, setK] = useState("");
