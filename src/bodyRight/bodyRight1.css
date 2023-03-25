@@ -14,3 +14,13 @@
   font-weight: bold;
   text-decoration: none;
 }
+@media(max-width:768px){
+  img{
+    width: 90%;
+    height: auto;
+  }
+  iframe{
+    width: 100%;
+    height: auto;
+  }
+}
