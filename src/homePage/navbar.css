@@ -1,10 +1,25 @@
 .right-list a{
-    padding: 5px;
     text-decoration: none;
     color: #000;
+    margin: 0;
+    padding: 0px;
 }
 
 .right-list a:hover{
+    background-color: #ccc;
+    color: red;
+}
+
+.right-list button{
+    padding: 5px;
+    color: #000;
+    margin: 5px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.right-list button:hover{
     background-color: #ccc;
     color: red;
 }

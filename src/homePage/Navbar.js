@@ -4,8 +4,20 @@ import "./home.css";
 import "./navbar.css";
 import ReorderIcon from '@mui/icons-material/Reorder';
 import CloseIcon from "@mui/icons-material/Close";
+
+import LoginModal from "./loginModal";
+
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   const handleMenu = () => {
     setShowMenu(!showMenu);
@@ -16,10 +28,15 @@ function Navbar() {
       <p>
         <a href="/">EasyMath</a>
       </p>
+
       <div className={`right-list ${showMenu ? "responsive_nav" : ""}`}>
-        <a href="/">Home</a>
-        <a href="/">Login</a>
+        <button>
+          <a href="/">Home</a>
+        </button>
+        <button onClick={handleOpenModal}>Login</button>
+        {showModal && <LoginModal onClose={handleCloseModal} />}
       </div>
+      
       <div className={`close-btn ${showMenu ? "" : "hide"}`}>
         <CloseIcon onClick={handleMenu} />
       </div>
